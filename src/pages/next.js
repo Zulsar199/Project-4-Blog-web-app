@@ -5,18 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 console.log("hello world");
 
-const callAPI = async () => {
-  try {
-    const res = await fetch(`https://dev.to/api/articles`);
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log(err);
-  }
-};
-const jsonData = await callAPI();
 
-console.log(jsonData);
 
 export default function Home() {
   return (
