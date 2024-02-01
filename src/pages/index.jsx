@@ -1,5 +1,6 @@
 import { AllBlogPost } from "@/components/layout/AllBlogPost";
 import { Carousel } from "@/components/layout/Carousel";
+import { Carousel2 } from "@/components/layout/Carousel2";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Trending } from "@/components/layout/Trending";
@@ -62,6 +63,7 @@ export default function Home() {
   return (
     <div>
       <Header onchange={handleSearch} />
+      <Carousel2 array={carousel}/>
       <Carousel array={carousel}/>
       <Trending array={trending} />
       <AllBlogPost array={filteredArray} loadMore={loadMore} />

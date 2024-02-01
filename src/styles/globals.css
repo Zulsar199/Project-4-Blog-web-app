@@ -31,6 +31,16 @@
     text-wrap: balance;
   }
 }
-.asd{
-  scroll-snap-type: x mandatory;
+
+.carousel {
+  animation: to-let 5s linear infinite;
+}
+
+@keyframes to-let {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-10000px);
+  }
 }
