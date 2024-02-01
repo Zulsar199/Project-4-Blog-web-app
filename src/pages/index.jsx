@@ -38,7 +38,7 @@ export default function Home() {
       const data2 = await res2.json();
       setTrending(data2);
 
-      const res3 = await fetch(`https://dev.to/api/articles?&per_page=5`);
+      const res3 = await fetch(`https://dev.to/api/articles?state=rising&per_page=5`);
       const data3 = await res3.json();
       setCarousel(data3);
       
@@ -64,7 +64,7 @@ export default function Home() {
       <Header onchange={handleSearch} />
       <Carousel array={carousel}/>
       <Trending array={trending} />
-      <AllBlogPost array={articles} loadMore={loadMore} />
+      <AllBlogPost array={filteredArray} loadMore={loadMore} />
       <Footer />
     </div>
   );

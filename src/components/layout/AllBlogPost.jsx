@@ -23,7 +23,7 @@ export const AllBlogPost = ({ array, loadMore }) => {
             return (
               <BlogPostCard
                 id={article.id}
-                picture={article.cover_image}
+                picture={article.cover_image || "/blogPostImg.png"}
                 position="Technology"
                 title={article.title}
                 date={article.readable_publish_date}

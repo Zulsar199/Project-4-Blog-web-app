@@ -9,7 +9,7 @@ export const Trending = ({array}) => {
                 <div className="text-2xl font-bold">Trending</div>
                 <div className="grid grid-cols-4 gap-x-5">{array.map((article) => {
                     return(
-                        <TrendingCard picture={article.cover_image} position="Technology" title={article.title}/>
+                        <TrendingCard picture={article.cover_image || "/TrendingRectangle38.png"} position="Technology" title={article.title}/>
                     )
                 })}</div>
                 
