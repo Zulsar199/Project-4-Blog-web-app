@@ -1,4 +1,4 @@
-import { TrendingData } from "../data/TrendingData";
+// import { TrendingData } from "../data/TrendingData";
 import { TrendingCard } from "../ui/TrendingCard";
 
 export const Trending = ({array}) => {

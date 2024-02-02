@@ -2,36 +2,62 @@ import { useEffect, useState } from "react";
 import { Left } from "../icons/Left";
 import { Right } from "../icons/Right";
 export const Carousel2 = ({ array }) => {
-  console.log(array);
-  let autoSlide = false;
-  let autoSlideInterval = 3000;
+
   const [carousel, setCarousel] = useState("");
   const [move, setMove] = useState(0);
+  let carouselCss = "carousel";
   const left = () => {
     setCarousel(`translateX(${move}px)`);
-    setMove((prevVal) => prevVal + 100);
+    setMove((prevVal) =>prevVal + 100);
+    carouselCss = "";
+    console.log("ajillaa");
+    console.log(carouselCss);
   };
   const right = () => {
     setCarousel(`translateX(-${move}px)`);
-
     setMove((prevVal) => prevVal - 100);
+    carouselCss = "";
   };
   useEffect(() => {
     left;
     right;
-    if (!autoSlide) return
-        const slideInterval = setInterval(next, autoSlideInterval);
-return() => clearInterval(slideInterval)
-    
   }, [carousel]);
+  // let carouselCss = {"
+  //   animation: to-let 50s linear infinite ;
+  //   animation-delay: 3s ;
+
+  
+  // @keyframes to-let {
+  //   0% {
+  //     transform: translateX(0%);
+  //   }
+  //   20% {
+  //     transform: translateX(-100%);
+  //   }
+  //   40% {
+  //     transform: translateX(-200%);
+  //   }
+  //   60% {
+  //     transform: translateX(-300%);
+  //   }
+  //   80% {
+  //     transform: translateX(-400%);
+  //   }
+  //   100% {
+  //     transform: translateX(-500%);
+  //   }
+  // }"}
   return (
     <div className="py-[50px] ">
-      <div  className="flex flex-col justify-center items-center gap-[11px] ">
-        <div autoSlide={true} autoSlideInterval={1000} style={{transform: `translateX(${move}%)`}} className={`min-w-screen-xl max-w-[500%] flex  transition ease-in-out duration-300`}>
+      <div className="flex flex-col justify-center items-center gap-[11px] ">
+        <div
+          style={{ transform: `translateX(${move}%) ${carouselCss}` }}
+          className={`min-w-screen-xl max-w-[500%] flex transition ease-in-out duration-300 ${carouselCss} `}
+        >
           {array.map((el) => {
             return (
-              <div className=" flex items-center justify-center min-w-full carousel ">
-                <div className="relative ">
+              <div id={el.id} className=" flex items-center justify-center min-w-full ">
+                <div className="relative">
                   <div className="">
                     <img
                       className="rounded-xl max-w-screen-xl h-[600px] z-1"

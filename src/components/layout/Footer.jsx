@@ -3,6 +3,7 @@ import { Instagram } from "../icons/Instagram";
 import { LinkedIn } from "../icons/LinkedIn";
 import { LogoB } from "../icons/LogoB";
 import { Twitter } from "../icons/Twitter";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -26,9 +27,9 @@ export const Footer = () => {
               </div>
             </div>
             <div className="w-[40%] flex flex-col gap-2 items-center *:text-left">
-              <button>Home</button>
-              <button>Blog</button>
-              <button>Contact</button>
+              <Link href="/">Home</Link>
+              <Link href="/blogList">Blog</Link>
+              <Link href="/contactUs">Contact</Link>
             </div>
             <div className="w-[30%] flex *:ml-5 items-start">
               <Facebook />
