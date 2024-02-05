@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 //   }, [])
 export default function Home() {
   // const { data, blogData } = useGetData();
-  let number = 9;
   const [articles, setArticles] = useState([]);
   const [trending, setTrending] = useState([]);
   const [carousel, setCarousel] = useState([]);

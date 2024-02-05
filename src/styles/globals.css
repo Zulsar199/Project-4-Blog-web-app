@@ -33,19 +33,22 @@
 }
 
 .carousel {
-  animation: to-let 50s linear infinite ;
-  animation-delay: 3s ;
+  animation: to-let 50s linear infinite;
+  animation-delay: 3s;
 }
 
 @keyframes to-let {
   0% {
     transform: translateX(0%);
+    animation-delay: 3s;
   }
   20% {
     transform: translateX(-100%);
+    animation-delay: 3s;
   }
   40% {
     transform: translateX(-200%);
+    animation-delay: 3s;
   }
   60% {
     transform: translateX(-300%);

@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { Left } from "../icons/Left";
 import { Right } from "../icons/Right";
 export const Carousel2 = ({ array }) => {
-
   const [carousel, setCarousel] = useState("");
   const [move, setMove] = useState(0);
   let carouselCss = "carousel";
   const left = () => {
     setCarousel(`translateX(${move}px)`);
-    setMove((prevVal) =>prevVal + 100);
+    setMove((prevVal) => prevVal + 100);
     carouselCss = "";
-    console.log("ajillaa");
+    console.log("left ajillaa");
     console.log(carouselCss);
   };
   const right = () => {
@@ -26,7 +25,6 @@ export const Carousel2 = ({ array }) => {
   //   animation: to-let 50s linear infinite ;
   //   animation-delay: 3s ;
 
-  
   // @keyframes to-let {
   //   0% {
   //     transform: translateX(0%);
@@ -48,19 +46,22 @@ export const Carousel2 = ({ array }) => {
   //   }
   // }"}
   return (
-    <div className="py-[50px] ">
-      <div className="flex flex-col justify-center items-center gap-[11px] ">
+    <div className="max-w-screen-xl m-auto py-[50px] ">
+      <div className="flex flex-col justify-center overflow-hidden items-center gap-[11px] ">
         <div
           style={{ transform: `translateX(${move}%) ${carouselCss}` }}
-          className={`min-w-screen-xl max-w-[500%] flex transition ease-in-out duration-300 ${carouselCss} `}
+          className={` flex transition ease-in-out duration-300 h-[600px] ${carouselCss} `}
         >
           {array.map((el) => {
             return (
-              <div id={el.id} className=" flex items-center justify-center min-w-full ">
-                <div className="relative">
-                  <div className="">
+              <div
+                id={el.id}
+                className=" flex items-center justify-center min-w-full "
+              >
+                <div className="relative min-h-full">
+                  <div className="min-h-full">
                     <img
-                      className="rounded-xl max-w-screen-xl h-[600px] z-1"
+                      className="rounded-xl min-w-full h-[600px]  z-1"
                       src={el.cover_image || "/CarouselImage.png"}
                       alt=""
                     />

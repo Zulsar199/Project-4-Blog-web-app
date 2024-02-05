@@ -14,9 +14,6 @@ export const Header = ({ onchange }) => {
               </Link>
               <Link href="/contactUs">Contact
               </Link>
-              {/* <button>Home</button>
-              <button>Blog</button>
-              <button>Contact</button> */}
             </div>
             <div className="rounded-md bg-gray-100 flex items-center w-[166px] h-9 gap-[9px] py-2 pr-2 pl-4">
               <form
