@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { Left } from "../icons/Left";
 import { Right } from "../icons/Right";
-export const Carousel2 = ({ array }) => {
+import { useContext } from "react";
+import { FirstContext } from "../utils/context";
+export const Carousel2 = () => {
+  const {carouselArticles} = useContext(FirstContext)
   const [carousel, setCarousel] = useState("");
   const [move, setMove] = useState(0);
   let carouselCss = "carousel";
@@ -52,7 +55,7 @@ export const Carousel2 = ({ array }) => {
           style={{ transform: `translateX(${move}%) ${carouselCss}` }}
           className={` flex transition ease-in-out duration-300 h-[600px] ${carouselCss} `}
         >
-          {array.map((el) => {
+          {carouselArticles.map((el) => {
             return (
               <div
                 id={el.id}

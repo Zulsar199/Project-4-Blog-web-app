@@ -1,5 +1,8 @@
+import Link from "next/link"
+
 export const BlogPostCard = ({ picture, position, title, date, id }) => {
   return (
+    <Link href={{pathname : "/single-post", query: {Id: id}}}>
     <div id={id} className=" w-[100%] p-4 flex flex-col justify-between h-[450px] border border-gray-100 rounded-xl ">
       <div className="w-full h-[50%]">
         <img className="w-full h-full" src={picture} alt="" />
@@ -14,5 +17,6 @@ export const BlogPostCard = ({ picture, position, title, date, id }) => {
         <div className="text-gray-400">{date}</div>
       </div>
     </div>
+    </Link>
   );
 };

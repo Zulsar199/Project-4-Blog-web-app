@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Left } from "../icons/Left";
 import { Right } from "../icons/Right";
-export const Carousel = ({ array }) => {
-  console.log(array);
-
+import { useContext } from "react";
+import { FirstContext } from "../utils/context";
+export const Carousel = () => {
+  const {carouselArticles} = useContext(FirstContext)
   const [carousel, setCarousel] = useState("");
   const [move, setMove] = useState(0);
   const left = () => {
@@ -23,7 +24,7 @@ export const Carousel = ({ array }) => {
     <div className="py-[50px] ">
       <div className="flex flex-col justify-center items-center gap-[11px]">
         <div style={{transform: `translateX(${move}%)`}} className={`min-w-screen-xl max-w-[500%] flex  transition ease-in-out duration-300 `}>
-          {array.map((el) => {
+          {carouselArticles.map((el) => {
             return (
               <div className=" flex items-center justify-center min-w-full">
                 <div className="relative ">

@@ -1,6 +1,9 @@
 import { BlogPostCard } from "../ui/BlogPostCard";
+import { useContext } from "react";
+import { FirstContext } from "../utils/context";
 
-export const AllBlogPost = ({ array, loadMore }) => {
+export const AllBlogPost = () => {
+  const {articles, loadMore} = useContext(FirstContext)
   return (
     <div className="max-w-screen-xl m-auto py-[50px]">
       <div className="flex flex-col gap-8">
@@ -19,7 +22,7 @@ export const AllBlogPost = ({ array, loadMore }) => {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-5">
-          {array.map((article) => {
+          {articles.map((article) => {
             return (
               <BlogPostCard
                 id={article.id}
@@ -39,7 +42,8 @@ export const AllBlogPost = ({ array, loadMore }) => {
   );
 };
 
-export const AllBlogPostList = ({ array, loadMore }) => {
+export const AllBlogPostList = () => {
+  const {articles, loadMore} = useContext(FirstContext)
   return (
     <div className="max-w-screen-xl m-auto py-[50px]">
       <div className="flex flex-col gap-8">
@@ -47,7 +51,7 @@ export const AllBlogPostList = ({ array, loadMore }) => {
           <div className="font-bold text-2xl">All Blog Post</div>
         </div>
         <div className="grid grid-cols-3 gap-5">
-          {array.map((article) => {
+          {articles.map((article) => {
             return (
               <BlogPostCard
                 id={article.id}

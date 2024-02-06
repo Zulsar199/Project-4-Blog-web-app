@@ -1,6 +1,9 @@
 import { SearchIcon } from "../icons/Search";
 import Link from "next/link";
-export const Header = ({ onchange }) => {
+import { useContext } from "react";
+import { FirstContext } from "../utils/context";
+export const Header = () => {
+  const {handleSearch} = useContext(FirstContext)
   return (
     <div className="bg-white  sticky top-0 z-20">
       <div className="max-w-screen-xl m-auto py-8">
@@ -21,7 +24,7 @@ export const Header = ({ onchange }) => {
                 action="/action_page.php"
               >
                 <input
-                  onChange={onchange}
+                  onChange={handleSearch}
                   className="w-[114px] bg-gray-100"
                   type="text"
                   placeholder="Search"
