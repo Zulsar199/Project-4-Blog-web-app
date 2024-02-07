@@ -8,13 +8,21 @@ export const FirstContextProvider = ({ children }) => {
   const [carouselArticles, setCarouselArticles] = useState([]);
   const [filteredArray, setfilteredArray] = useState(articles);
   const [count, setCount] = useState(9);
+  const [tag, setTag] = useState();
+
   const loadMore = () => {
     setCount(count + 9);
   };
-
+  const [displayBlock, setDisplayBlock] = useState("block");
+  const viewAll = () => {
+    setCount(50);
+    setDisplayBlock("hidden");
+  };
   const callAPI = async () => {
     try {
-      const res = await fetch(`https://dev.to/api/articles?per_page=${count}`);
+      const res = await fetch(
+        `https://dev.to/api/articles?per_page=${count}&tag=${tag}`
+      );
       const data = await res.json();
       setArticles(data);
       setfilteredArray(data);
@@ -41,10 +49,18 @@ export const FirstContextProvider = ({ children }) => {
     );
     setfilteredArray(filteredArticles);
   };
-
+  const filteredTag = (tagName) => {
+    const filteredArticles1 = filteredArray.filter((el) =>
+      el.tags.split(",")[0].includes(tagName)
+    );
+    console.log("tagName", tagName);
+    console.log(filteredArticles1, "helooo");
+    setfilteredArray(filteredArticles1);
+    // setTag(tagName);
+  };
   useEffect(() => {
     callAPI();
-  }, [count]);
+  }, [count, tag]);
   return (
     <FirstContext.Provider
       value={{
@@ -54,6 +70,9 @@ export const FirstContextProvider = ({ children }) => {
         filteredArray,
         loadMore,
         handleSearch,
+        viewAll,
+        filteredTag,
+        displayBlock,
       }}
     >
       {children}

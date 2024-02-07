@@ -33,8 +33,10 @@
 }
 
 .carousel {
-  animation: to-let 50s linear infinite;
-  animation-delay: 3s;
+  animation: to-let 20s linear;
+  animation-play-state: running;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes to-let {

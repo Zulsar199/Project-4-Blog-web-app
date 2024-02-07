@@ -3,6 +3,10 @@ import { Footer } from "@/components/layout/Footer";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
+// 1. deployment => vercel => 
+// 2. nest SSR SSG =>
+// 3. github pul request =>
+// 4. 
 export default function SinglePost() {
   const router = useRouter();
   console.log("router " + router);
