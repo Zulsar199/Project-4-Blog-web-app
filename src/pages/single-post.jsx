@@ -1,18 +1,20 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
+import { FirstContext } from "@/components/utils/context";
+import { ContactHeader } from "@/components/layout/ContactHeader";
 
-// 1. deployment => vercel => 
+// 1. deployment => vercel =>
 // 2. nest SSR SSG =>
 // 3. github pul request =>
-// 4. 
+// 4.
 export default function SinglePost() {
+  // const {isLoading} = useContext(FirstContext);
   const router = useRouter();
-  console.log("router " + router);
   const id = router.query.Id;
-  console.log("id " + id);
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsloading] = useState(false);
   const callAPI = async () => {
     try {
       const res = await fetch(`https://dev.to/api/articles/${id}`);
@@ -25,16 +27,50 @@ export default function SinglePost() {
   };
   console.log(articles);
   useEffect(() => {
-    if (id) {
-      callAPI();
-    }
+    setIsloading(true);
+    // if (id) {
+    //   callAPI();
+    // }
+    callAPI();
+    setIsloading(false);
   }, [id]);
+  if (isLoading) {
+    return (
+      <div className="">
+        <ContactHeader />
+        <div className="flex justify-center items-center">
+          <div className="w-1/2 h-[500px] m-auto">
+            <div className="animate-pulse flex ">
+              <div className="flex-1 space-y-2 py-1">
+                <div className="space-y-3">
+                  <div className="h-[250px] bg-slate-300 rounded"></div>
+                </div>
+                <div className="h-[20px] bg-slate-300 rounded mt-[40px]"></div>
+                <div className="flex justify-between">
+                  <div className="h-[20px] w-[67%] bg-slate-300 rounded"></div>
+                  <div className="h-[20px] w-[30%] bg-slate-300 rounded"></div>
+                </div>
+                <div className="h-[20px] bg-slate-300 rounded"></div>
+                <div className="h-[20px] bg-slate-300 rounded"></div>
+                <div className="flex justify-between">
+                  <div className="h-[20px] w-[30%] bg-slate-300 rounded"></div>
+                  <div className="h-[20px] w-[67%] bg-slate-300 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
   return (
     <div className="">
-      <Header />
-      <div className="m-auto w-1/2 py-[50px]">
+      <ContactHeader />
+
+      <div className="m-auto lg:w-1/2 sm:w-2/3 py-[50px]">
         <div className="flex flex-col gap-6">
-          <h1 className="font-bold text-4xl">{articles.title}</h1>
+          <h1 className="font-bold text-4xl sm:text-3xl">{articles.title}</h1>
           <div className="flex gap-8">
             <div className="flex gap-2">
               <img
@@ -50,8 +86,8 @@ export default function SinglePost() {
             <img
               className="w-full rounded-xl"
               src={
-                articles.cover_image ||
-                "https://s3-alpha-sig.figma.com/img/eb1f/38cd/a6a8e0df2280c787cafc780464b002fe?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bKOrTN7gUeTiHmMS1ChL3p9qYr9NhyNZRGfx1nLLj~hxwYFZdmUOkzlBS-36Xl8Rr163FtBXSgjMyBV~q4EIZ6Fe8zdiHs2dQpyYCfvb2NoMx1nSKplLEzSfkla5Amz1gmWaHqym54Wc4F5yNVHqiGQ2jNyLW-T93dh5RrMo4lx0ETt7Da6E9~WSGZ0AzdDIahQROt0Dte5WxTg-zr6VcmXEtmA1hXIWFRvXg6t6kn7YE14e8EJbBJjO1ILftB1EKLqSQuwDOBHKE2gxG~GT7vh-nTk36ggcTlkWaVFBXd2-cigmBB0~Rd~bRg9xQMkpTF0uH16ngJnx8pzGFbCLfg__"
+                articles.cover_image
+                // "https://ichef.bbci.co.uk/news/976/cpsprodpb/15C0D/production/_117310198_03.jpg.webp"
               }
               alt=""
             />

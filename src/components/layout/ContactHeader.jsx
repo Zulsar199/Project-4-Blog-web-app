@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { FirstContext } from "../utils/context";
 import { Menu } from "../icons/Menu";
 import { Close } from "../icons/Close";
-export const Header = () => {
+export const ContactHeader = () => {
   const { handleSearch } = useContext(FirstContext);
   const [showMenu, setShowMenu] = useState(false);
   const [showSideBar, setShowSideBar] = useState(false);
@@ -34,23 +34,7 @@ export const Header = () => {
             <Link href="/blogList">Blog</Link>
             <Link href="/contactUs">Contact</Link>
           </div>
-          <div className="rounded-md bg-gray-100 flex items-center w-[166px] h-9 gap-[9px] py-2 px-2 max-[429px]:hidden">
-            <form
-              className="flex justify-between items-center gap-3"
-              action="/action_page.php"
-            >
-              <input
-                onChange={handleSearch}
-                className="w-[150px] bg-gray-100 outline-none"
-                type="text"
-                placeholder="Search"
-                name="search"
-              ></input>
-              {/* <button type="submit">
-                <SearchIcon />
-              </button> */}
-            </form>
-          </div>
+
           <div className="hidden max-[429px]:block">
             <button
               onClick={handleOpen}

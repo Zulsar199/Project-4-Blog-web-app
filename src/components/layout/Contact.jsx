@@ -1,8 +1,8 @@
 import { SearchIcon } from "../icons/Search";
 export const Contact = () => {
   return (
-    <div className="container m-auto max-w-screen-md py-20 flex flex-col gap-10">
-      <div className="flex flex-col gap-10">
+    <div className="container m-auto max-w-screen-md py-20 max-[429px]:py-15 flex flex-col gap-10">
+      <div className="flex flex-col gap-10 max-[429px]:px-5">
         <div className="flex flex-col gap-6">
           <h1 className="font-bold text-4xl">Contact Us</h1>
           <p className="text-gray-500">
@@ -56,7 +56,7 @@ export const Contact = () => {
             placeholder="Write a Message"
           ></input>
 
-          <button className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-md">
+          <button className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-md hover:text-[#4B6BFB] hover:bg-gray-300 active:bg-blue-100">
             Send Message
           </button>
         </div>

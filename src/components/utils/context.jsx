@@ -8,7 +8,7 @@ export const FirstContextProvider = ({ children }) => {
   const [carouselArticles, setCarouselArticles] = useState([]);
   const [filteredArray, setfilteredArray] = useState(articles);
   const [count, setCount] = useState(9);
-  const [tag, setTag] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const loadMore = () => {
     setCount(count + 3);
@@ -16,9 +16,7 @@ export const FirstContextProvider = ({ children }) => {
   const [displayBlock, setDisplayBlock] = useState("block");
   const callAPI = async () => {
     try {
-      const res = await fetch(
-        `https://dev.to/api/articles?per_page=${count}`
-      );
+      const res = await fetch(`https://dev.to/api/articles?per_page=${count}`);
       const data = await res.json();
       setArticles(data);
       setfilteredArray(data);
@@ -34,6 +32,7 @@ export const FirstContextProvider = ({ children }) => {
       );
       const data3 = await res3.json();
       setCarouselArticles(data3);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -53,8 +52,9 @@ export const FirstContextProvider = ({ children }) => {
     // setTag(tagName);
   };
   useEffect(() => {
+    setIsLoading(true);
     callAPI();
-  }, [count, tag]);
+  }, [count]);
   return (
     <FirstContext.Provider
       value={{
@@ -66,6 +66,7 @@ export const FirstContextProvider = ({ children }) => {
         handleSearch,
         filteredTag,
         displayBlock,
+        isLoading,
       }}
     >
       {children}
