@@ -34,7 +34,7 @@ export const BlogPostCard = ({ picture, position, title, date, id }) => {
     <Link href={{ pathname: "/single-post", query: { Id: id } }}>
       <div
         id={id}
-        className=" w-[100%] p-4 flex flex-col justify-between h-[450px] sm:h-[280px] border border-gray-100 rounded-xl shadow-md hover:shadow-2xl active:bg-gray-100"
+        className=" w-[100%] p-4 flex flex-col justify-between lg:h-[450px] sm:h-[280px] border border-gray-100 rounded-xl shadow-md hover:shadow-2xl active:bg-gray-100"
       >
         <div className="w-full h-[50%]">
           <img className="w-full h-full" src={picture} alt="" />
@@ -42,16 +42,16 @@ export const BlogPostCard = ({ picture, position, title, date, id }) => {
         <div className="flex flex-col justify-between gap-5 sm:gap-2 p-2 h-[45%]">
           <div className="flex flex-col gap-4 sm:gap-2">
             <div className="flex">
-              <div className="text-[#4B6BFB] bg-gray-100 sm:text-sm py-[4px] px-[10px] sm:py[2px] sm:px-[5px] w-[fit-content] rounded-xl">
+              <div className="text-[#4B6BFB] bg-gray-100 lg:text-lg sm:text-sm py-[4px] px-[10px] sm:py[2px] sm:px-[5px] w-[fit-content] rounded-xl">
                 {position.split(",")[0]}
               </div>
             </div>
 
-            <div className="'font-semibold text-2xl sm:text-base sm:max-h-[50px] lg:max-h-[70px] text-ellipsis overflow-hidden">
+            <div className="'font-semibold lg:text-2xl sm:text-base sm:max-h-[50px] lg:max-h-[70px] text-ellipsis overflow-hidden">
               {title}
             </div>
           </div>
-          <div className="text-gray-400 sm:text-sm">{date}</div>
+          <div className="text-gray-400 lg:text-lg sm:text-sm">{date}</div>
         </div>
       </div>
     </Link>

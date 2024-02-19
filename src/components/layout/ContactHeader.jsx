@@ -23,13 +23,13 @@ export const ContactHeader = () => {
   return (
     <div className={`bg-white  sticky top-0 z-20`}>
       <div className="max-w-screen-xl m-auto py-8">
-        <div className="container m-auto flex justify-between max-[429px]:px-5">
+        <div className="container m-auto flex justify-center max-[429px]:px-5 relative">
           <img
-            className="max-[429px]:w-[150px]"
+            className="max-[429px]:w-[150px] absolute left-0 top-0"
             src="/MetaBlogLogo.svg"
             alt=""
           />
-          <div className="flex gap-10 text-[#3B3C4A] hover:*:text-[#4B6BFB] items-center max-[429px]:hidden">
+          <div className="flex gap-10 text-[#3B3C4A] hover:*:text-[#4B6BFB] max-[429px]:hidden items-center">
             <Link href="/">Home</Link>
             <Link href="/blogList">Blog</Link>
             <Link href="/contactUs">Contact</Link>
