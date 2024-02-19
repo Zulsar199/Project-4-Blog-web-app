@@ -1,6 +1,9 @@
-export const Right = ({onclick}) => {
+export const Right = ({ onclick }) => {
   return (
-    <button onClick={onclick} className="rounded-md border w-10 h-10 flex justify-center items-center">
+    <button
+      onClick={onclick}
+      className="rounded-md border w-10 h-10 flex justify-center items-center"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="9"
@@ -11,8 +14,8 @@ export const Right = ({onclick}) => {
         <path
           d="M1 1L8.5 8.5L1 16"
           stroke="black"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </button>

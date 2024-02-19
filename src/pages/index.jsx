@@ -62,10 +62,10 @@ export default function Home() {
   // }, [count]);
 
   return (
-    <div className="m-auto">
+    <div className="">
       <Header />
       <Carousel2 />
-      {/* <Carousel  */}
+      {/* <Carousel /> */}
       <Trending />
       <AllBlogPost />
       <Footer />

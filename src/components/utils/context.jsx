@@ -14,10 +14,6 @@ export const FirstContextProvider = ({ children }) => {
     setCount(count + 9);
   };
   const [displayBlock, setDisplayBlock] = useState("block");
-  const viewAll = () => {
-    setCount(50);
-    setDisplayBlock("hidden");
-  };
   const callAPI = async () => {
     try {
       const res = await fetch(
@@ -50,7 +46,7 @@ export const FirstContextProvider = ({ children }) => {
     setfilteredArray(filteredArticles);
   };
   const filteredTag = (tagName) => {
-    const filteredArticles1 = filteredArray.filter((el) =>
+    const filteredArticles1 = articles.filter((el) =>
       el.tags.split(",")[0].includes(tagName)
     );
     console.log("tagName", tagName);
@@ -70,7 +66,6 @@ export const FirstContextProvider = ({ children }) => {
         filteredArray,
         loadMore,
         handleSearch,
-        viewAll,
         filteredTag,
         displayBlock,
       }}

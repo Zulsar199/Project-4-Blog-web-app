@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Left } from "../icons/Left";
 import { Right } from "../icons/Right";
 import { useContext } from "react";
-import { FirstContext } from "../utils/context";
+import { FirstContext } from "../utils/context.jsx";
 import Link from "next/link";
 export const Carousel2 = () => {
   const { carouselArticles } = useContext(FirstContext);
+  console.log(carouselArticles + "carouselArticles");
   const [carousel, setCarousel] = useState("");
   const [move, setMove] = useState(0);
   let carouselCss = "carousel";
@@ -63,27 +64,27 @@ export const Carousel2 = () => {
                 className=" flex items-center justify-center min-w-full "
                 href={{ pathname: "/single-post", query: { Id: el.id } }}
               >
-                  <div className="relative min-h-full">
-                    <div className="min-h-full">
-                      <img
-                        className="rounded-xl min-w-full h-[600px]  z-1"
-                        src={el.cover_image || "/CarouselImage.png"}
-                        alt=""
-                      />
+                <div className="relative min-h-full">
+                  <div className="min-h-full">
+                    <img
+                      className="rounded-xl min-w-full h-[600px]  z-1"
+                      src={el.cover_image || "/CarouselImage.png"}
+                      alt=""
+                    />
+                  </div>
+                  <div className="rounded-xl bg-white p-10 w-1/2 absolute flex flex-col justify-between bottom-[13px] left-[11px]">
+                    <div className="flex flex-col gap-4 mb-6">
+                      <div className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-xl">
+                        Technology
+                      </div>
+                      <div className="font-bold text-4xl">{el.title}</div>
                     </div>
-                    <div className="rounded-xl bg-white p-10 w-1/2 absolute flex flex-col justify-between bottom-[13px] left-[11px]">
-                      <div className="flex flex-col gap-4 mb-6">
-                        <div className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-xl">
-                          Technology
-                        </div>
-                        <div className="font-bold text-4xl">{el.title}</div>
-                      </div>
 
-                      <div className="text-gray-400">
-                        {el.readable_publish_date}
-                      </div>
+                    <div className="text-gray-400">
+                      {el.readable_publish_date}
                     </div>
                   </div>
+                </div>
               </Link>
             );
           })}

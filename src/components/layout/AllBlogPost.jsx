@@ -1,9 +1,10 @@
 import { BlogPostCard } from "../ui/BlogPostCard";
 import { useContext } from "react";
 import { FirstContext } from "../utils/context";
+import Link from "next/link";
 
 export const AllBlogPost = () => {
-  const { filteredArray, loadMore, viewAll, displayBlock, filteredTag } =
+  const { filteredArray, loadMore, displayBlock, filteredTag } =
     useContext(FirstContext);
   console.log(displayBlock);
   return (
@@ -13,7 +14,7 @@ export const AllBlogPost = () => {
           <div className="font-bold text-2xl">All Blog Post</div>
           <div className="*:text-#495057 flex justify-between">
             <div className="flex gap-[20px]">
-              <button onClick={() => filteredTag()}>All</button>
+              <button onClick={() => filteredTag("")}>All</button>
               <button onClick={() => filteredTag("html")}>Html</button>
               <button onClick={() => filteredTag("css")}>Css</button>
               <button onClick={() => filteredTag("javascript")}>
@@ -25,7 +26,7 @@ export const AllBlogPost = () => {
                 TailwindCss
               </button>
             </div>
-            <button onClick={viewAll}>View All</button>
+            <Link href="/blogList">View All</Link>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-5">
