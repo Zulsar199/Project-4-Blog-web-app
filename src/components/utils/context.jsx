@@ -11,13 +11,13 @@ export const FirstContextProvider = ({ children }) => {
   const [tag, setTag] = useState();
 
   const loadMore = () => {
-    setCount(count + 9);
+    setCount(count + 3);
   };
   const [displayBlock, setDisplayBlock] = useState("block");
   const callAPI = async () => {
     try {
       const res = await fetch(
-        `https://dev.to/api/articles?per_page=${count}&tag=${tag}`
+        `https://dev.to/api/articles?per_page=${count}`
       );
       const data = await res.json();
       setArticles(data);
@@ -49,8 +49,6 @@ export const FirstContextProvider = ({ children }) => {
     const filteredArticles1 = articles.filter((el) =>
       el.tags.split(",")[0].includes(tagName)
     );
-    console.log("tagName", tagName);
-    console.log(filteredArticles1, "helooo");
     setfilteredArray(filteredArticles1);
     // setTag(tagName);
   };

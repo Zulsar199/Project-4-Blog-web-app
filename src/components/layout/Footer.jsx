@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <div className="bg-gray-100 pt-16">
       <div className="max-w-screen-xl m-auto">
-        <div className="container flex flex-col gap-[25px]">
+        <div className="container m-auto flex flex-col gap-[25px]">
           <div className="flex justify-between">
             <div className="w-[30%] flex flex-col gap-6">
               <div className="flex flex-col gap-3">

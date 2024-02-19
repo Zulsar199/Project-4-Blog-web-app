@@ -62,7 +62,7 @@ export default function Home() {
   // }, [count]);
 
   return (
-    <div className="">
+    <div className="m-auto">
       <Header />
       <Carousel2 />
       {/* <Carousel /> */}

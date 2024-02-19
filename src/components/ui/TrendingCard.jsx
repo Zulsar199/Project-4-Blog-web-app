@@ -10,7 +10,7 @@ export const TrendingCard = ({ id, picture, position, title }) => {
       </div>
       <div className="absolute flex flex-col w-[90%] h-2/5 mb-[15px] gap-4">
         <div className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-xl">
-          {position}
+          {position.split(",")[0]}
         </div>
         <div className="text-white text-lg font-semibold">{title}</div>
       </div>

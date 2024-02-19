@@ -75,7 +75,7 @@ export const Carousel2 = () => {
                   <div className="rounded-xl bg-white p-10 w-1/2 absolute flex flex-col justify-between bottom-[13px] left-[11px]">
                     <div className="flex flex-col gap-4 mb-6">
                       <div className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-xl">
-                        Technology
+                        {el.tags.split(",")[0]}
                       </div>
                       <div className="font-bold text-4xl">{el.title}</div>
                     </div>
