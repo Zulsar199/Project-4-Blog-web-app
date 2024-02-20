@@ -4,7 +4,7 @@ import { Carousel2 } from "@/components/layout/Carousel2";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Trending } from "@/components/layout/Trending";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 //   console.log(jsonData);
 // const [articles, setArticles] = useState([])
@@ -15,7 +15,6 @@ import { useEffect, useState } from "react";
 //     .catch((error) => console.log(error));
 //   }, [])
 export default function Home() {
-  console.log("helloo");
   // // const { data, blogData } = useGetData();
   // const [articles, setArticles] = useState([]);
   // const [trending, setTrending] = useState([]);

@@ -4,7 +4,7 @@ import { FirstContext } from "../utils/context";
 import Link from "next/link";
 
 export const AllBlogPost = () => {
-  const { filteredArray, loadMore, displayBlock, filteredTag } =
+  const { filteredArray, loadMore,filteredTag } =
     useContext(FirstContext);
   return (
     <div className="max-w-screen-xl m-auto py-[50px] max-[429px]:py-10">
@@ -12,7 +12,7 @@ export const AllBlogPost = () => {
         <div className="flex flex-col gap-8">
           <div className="font-bold text-2xl">All Blog Post</div>
           <div className="*:text-#495057 flex justify-between max-[429px]:hidden">
-            <div className="flex lg:gap-[20px] *:rounded-[10px] *:py-[4px] *:px-[10px] hover:*:bg-gray-100 active:*:opacity-50 sm:w-[60%] sm:flex-wrap sm:gap-x-[10px]">
+            <div className="flex lg:gap-[20px] *:rounded-[10px] *:py-[4px] *:px-[10px] hover:*:bg-gray-100 active:*:bg-gray-300 sm:w-[60%] sm:flex-wrap sm:gap-x-[10px] *:transition *:ease-in-out *:delay-100 *:duration-200">
               <button onClick={() => filteredTag("")}>All</button>
               <button onClick={() => filteredTag("html")}>Html</button>
               <button onClick={() => filteredTag("css")}>Css</button>
@@ -50,7 +50,7 @@ export const AllBlogPost = () => {
 
       <div className="flex items-center justify-center">
         <button
-          className="text-[#696A75] rounded-md lg:px-5 lg:py-3 px-2 py-1 border border-gray-100 w-[fit-content] my-[50px] hover:bg-gray-100 active:opacity-50"
+          className="text-[#696A75] rounded-md lg:px-5 lg:py-3 px-2 py-1 border border-gray-100 w-[fit-content] my-[50px] hover:bg-gray-50 transition ease-in-out delay-50 duration-200 active:opacity-50"
           onClick={loadMore}
         >
           Load More
@@ -84,7 +84,7 @@ export const AllBlogPostList = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="text-[#696A75] rounded-md lg:px-5 lg:py-3 px-2 py-1 border border-gray-100 w-[fit-content] my-[50px] hover:bg-gray-100 active:opacity-50"
+          className="text-[#696A75] rounded-md lg:px-5 lg:py-3 px-2 py-1 border border-gray-100 w-[fit-content] my-[50px] hover:bg-gray-50 transition ease-in-out delay-50 duration-200 active:opacity-50"
           onClick={loadMore}
         >
           Load More

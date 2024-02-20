@@ -7,7 +7,7 @@ export const BlogPostCard = ({ picture, position, title, date, id }) => {
   if (isLoading) {
     return (
       <div className="flex p-[20px]">
-        <div className="border border-gray-300 shadow rounded-md  w-[500px] h-[450px]">
+        <div className="shadow rounded-md  w-[500px] h-[450px]">
           <div className="animate-pulse flex ">
             <div className="flex-1 space-y-2 py-1">
               <div className="space-y-3">
@@ -34,7 +34,7 @@ export const BlogPostCard = ({ picture, position, title, date, id }) => {
     <Link href={{ pathname: "/single-post", query: { Id: id } }}>
       <div
         id={id}
-        className=" w-[100%] p-4 flex flex-col justify-between lg:h-[450px] sm:h-[280px] border border-gray-100 rounded-xl shadow-md hover:shadow-2xl active:bg-gray-100"
+        className=" w-[100%] p-4 flex flex-col justify-between lg:h-[450px] sm:h-[280px] border border-gray-100 rounded-xl shadow-md hover:shadow-2xl transition ease-in-out delay-150 duration-200 active:bg-gray-200"
       >
         <div className="w-full h-[50%]">
           <img className="w-full h-full" src={picture} alt="" />

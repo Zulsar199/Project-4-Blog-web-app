@@ -31,8 +31,8 @@ export const Header = () => {
           />
           <div className="flex gap-10 text-[#3B3C4A] hover:*:text-[#4B6BFB] items-center max-[429px]:hidden">
             <Link href="/">Home</Link>
-            <Link href="/blogList">Blog</Link>
-            <Link href="/contactUs">Contact</Link>
+            <Link href="/blog-list">Blog</Link>
+            <Link href="/contact-us">Contact</Link>
           </div>
           <div className="rounded-md bg-gray-100 flex items-center w-[166px] h-9 gap-[9px] py-2 px-2 max-[429px]:hidden">
             <form
@@ -54,13 +54,17 @@ export const Header = () => {
           <div className="hidden max-[429px]:block">
             <button
               onClick={handleOpen}
-              className={`p-1.5 ${showSideBar ? "hidden" : "block"}`}
+              className={`p-1.5 ${
+                showSideBar ? "hidden" : "block"
+              } hover:bg-gray-100 rounded-md transition ease-in-out delay-50 duration-200 active:opacity-20`}
             >
               <Menu stroke={"black"} />
             </button>
             <button
               onClick={handleClose}
-              className={`p-1.5 ${showSideBar ? "block" : "hidden"}`}
+              className={`p-1.5 ${
+                showSideBar ? "block" : "hidden"
+              } hover:bg-gray-100 rounded-md transition ease-in-out delay-50 duration-200 active:opacity-20`}
             >
               <Close stroke={"black"} />
             </button>
@@ -88,10 +92,10 @@ export const Header = () => {
                 <div className="flex justify-between p-4 border-b-[1px] border-solid border-gray-200">
                   <h2 className="flex items-center font-bold">Web App</h2>
                 </div>
-                <div className="*:py-.5 p-4 flex flex-col gap-4 border-b-[1px] border-solid border-gray-200">
+                <div className="*:py-.5 *:py-2 *:px-4 flex flex-col border-b-[1px] border-solid border-gray-200 hover:*:bg-gray-100 active:*:opacity-30 *:transition *:ease-in-out *:delay-50 *:duration-500">
                   <Link href="/">Home</Link>
-                  <Link href="/blogList">Blog</Link>
-                  <Link href="/contactUs">Contact</Link>
+                  <Link href="/blog-list">Blog</Link>
+                  <Link href="/contact-us">Contact</Link>
                 </div>
               </div>
             </div>

@@ -1,16 +1,9 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { FirstContext } from "@/components/utils/context";
+import { Footer } from "@/components/layout/Footer";
 import { ContactHeader } from "@/components/layout/ContactHeader";
 
-// 1. deployment => vercel =>
-// 2. nest SSR SSG =>
-// 3. github pul request =>
-// 4.
 export default function SinglePost() {
-  // const {isLoading} = useContext(FirstContext);
   const router = useRouter();
   const id = router.query.Id;
   const [articles, setArticles] = useState([]);
@@ -25,7 +18,6 @@ export default function SinglePost() {
       console.log(error);
     }
   };
-  console.log(articles);
   useEffect(() => {
     setIsloading(true);
     // if (id) {
@@ -67,15 +59,16 @@ export default function SinglePost() {
   return (
     <div className="">
       <ContactHeader />
-
-      <div className="m-auto lg:w-1/2 sm:w-2/3 py-[50px]">
-        <div className="flex flex-col gap-6">
-          <h1 className="font-bold text-4xl sm:text-3xl">{articles.title}</h1>
+      <div className="m-auto lg:w-1/2 sm:w-2/3 py-[50px] max-[429px]:pt-[10px]">
+        <div className="flex flex-col gap-6 max-[429px]:gap-4 max-[429px]:px-5">
+          <h1 className="font-bold text-4xl sm:text-3xl max-[429px]:text-xl">
+            {articles.title}
+          </h1>
           <div className="flex gap-8">
             <div className="flex gap-2">
               <img
-                className="w-[28px] h-[28px] rounded-xl"
-                src="https://s3-alpha-sig.figma.com/img/0b91/04ea/6891be7496ccabdc2fd0b1a1d8a535d7?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qSRhqaNWD8R1F1auW7ywVrtPxLiEKkumS4G4wGLuDvA70zxW0gYrgssV1HAF8LJfMQSs5MCKyjzaJWM8cUuoXV6XfmS1gCy3R-XvbBRVDdEpnmEdthuplVVvW15aku2ToB1NSE9XUxFlnWOB0KKqNnJfGzcX9y0rhC77ifKx3pAvpWIDxcaFLneAhGnuR6vmPtxPBaiB4grg8f4ef-mqShA9f-qzE8U-Ztq3ZQgyi6Pj5fDhrQDDVeyT-WRc5UMw~Ab2yEeLPZIUeKr-HaX2n8TB3FhramXQutvc1NQlz7A1b0-hz9olPqP0Pa0CY6zE15KU3WdIKIyD3l8x6Kj3Tg__"
+                className="w-[28px] h-[28px] rounded-full"
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                 alt=""
               />
               <p className="text-gray-500">{articles.user?.name || "Name"}</p>
@@ -92,9 +85,9 @@ export default function SinglePost() {
               alt=""
             />
           </div>
-          <h3 className="text-2xl">Description</h3>
+          <h3 className="text-2xl max-[429px]:text-xl">Description</h3>
           <div className="text-gray-600">{articles.description}</div>
-          <h3 className="text-2xl">Title</h3>
+          <h3 className="text-2xl max-[429px]:text-xl">Title</h3>
           <p className="text-gray-600">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cum
             ratione nostrum quisquam, atque minima dolorum, quas nemo quod
@@ -109,7 +102,7 @@ export default function SinglePost() {
             quisquam fugit. Odit sequi perspiciatis consequuntur aut voluptatem
             qui dolor distinctio.
           </p>
-          <h3 className="text-2xl">Title</h3>
+          <h3 className="text-2xl max-[429px]:text-xl">Title</h3>
           <p className="text-gray-600">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
             repudiandae, provident eligendi iusto consectetur consequuntur.

@@ -30,20 +30,20 @@ export const TrendingCard = ({ id, picture, position, title }) => {
     <Link href={{ pathname: "/single-post", query: { Id: id } }}>
       <div
         id={id}
-        className="relative flex items-end justify-center h-[280px]  hover:h-[283px] active:opacity-35"
+        className="relative flex items-end justify-center h-[280px]  hover:scale-105 transition ease-in-out delay-150 duration-300 active:opacity-50"
       >
-        <div className="h-[280px] w-full bg-black rounded-xl">
+        <div className="h-[280px] w-full bg-black active:bg-gray-500 rounded-xl">
           <img
             className="h-full lg:w-[300px] w-full top-0 left-0 opacity-30  z-5 rounded-xl"
             src={picture}
             alt=""
           />
         </div>
-        <div className="absolute flex flex-col w-[90%] h-2/5 mb-[15px] gap-4">
+        <div className="absolute flex flex-col w-[90%] h-2/5 mb-[15px] gap-5">
           <div className="bg-[#4B6BFB] text-white py-[4px] px-[10px] w-[fit-content] rounded-xl">
             {position.split(",")[0]}
           </div>
-          <div className="text-white text-lg font-semibold">{title}</div>
+          <div className="text-white text-lg font-semibold text-ellipsis overflow-hidden h-[80%]">{title}</div>
         </div>
       </div>
     </Link>
