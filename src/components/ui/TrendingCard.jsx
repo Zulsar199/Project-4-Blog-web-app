@@ -34,7 +34,7 @@ export const TrendingCard = ({ id, picture, position, title }) => {
       >
         <div className="h-[280px] w-full bg-black active:bg-gray-500 rounded-xl">
           <img
-            className="h-full lg:w-[300px] w-full top-0 left-0 opacity-30  z-5 rounded-xl"
+            className="h-full  w-full top-0 left-0 opacity-30  z-5 rounded-xl"
             src={picture}
             alt=""
           />

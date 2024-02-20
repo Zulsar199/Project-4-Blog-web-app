@@ -9,7 +9,7 @@ export default function page404(props) {
       <Page404 />
       <Footer
         position={
-          "lg:fixed lg:left-0 lg:right-0 lg:bottom-0 lg:z-19 max-[429px]:fixed max-[429px]:left-0 max-[429px]:right-0 max-[429px]:bottom-0"
+          "fixed left-0 right-0 bottom-0 z-19 max-[429px]:fixed max-[429px]:left-0 max-[429px]:right-0 max-[429px]:bottom-0"
         }
       />
     </div>
