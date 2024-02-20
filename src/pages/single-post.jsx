@@ -85,9 +85,10 @@ export default function SinglePost() {
               alt=""
             />
           </div>
+          <div dangerouslySetInnerHTML={{__html: articles.body_html}}></div>
           <h3 className="text-2xl max-[429px]:text-xl">Description</h3>
           <div className="text-gray-600">{articles.description}</div>
-          <h3 className="text-2xl max-[429px]:text-xl">Title</h3>
+          {/* <h3 className="text-2xl max-[429px]:text-xl">Title</h3>
           <p className="text-gray-600">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cum
             ratione nostrum quisquam, atque minima dolorum, quas nemo quod
@@ -114,7 +115,7 @@ export default function SinglePost() {
             alias deserunt eveniet culpa earum consectetur, doloribus esse
             repellendus veniam hic repellat quidem ducimus ab maiores veritatis
             non, iusto modi temporibus.
-          </p>
+          </p> */}
         </div>
       </div>
       <Footer />
